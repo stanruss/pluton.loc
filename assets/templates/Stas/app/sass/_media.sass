@@ -1,0 +1,125 @@
+@import "vars"
+
+
+
+
+@media (min-width : 992px) and (max-width : 1200px)
+	html 
+		header
+			.top-line
+				.Logo
+					@include margin(30px, right)
+				.my-menu
+					li
+						@include margin(20px, right)
+				.social
+					@include padding(17px, left)
+					p
+						display: none
+					.fa
+						@include margin(10px, right)
+					
+
+
+
+
+@media (min-width : 768px) and (max-width : 991px)
+	html 
+		header
+			.carousel-main
+				
+			.top-line
+				.my-menu
+					li
+						@include margin(10px, right)
+				.Logo
+					@include margin(0, right)
+				.social
+					display: none
+					
+
+
+
+@media (min-width : 240px) and (max-width : 768px)
+	section
+		top: 0
+
+
+
+
+@media only screen and (max-width : 480px)
+	.animated
+			animation: none
+
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+
+@media only screen and (min-width : 320px)
+	/**/
+
+
+
+@media only screen and (min-width : 480px)
+	/**/
+
+
+
+@media only screen and (min-width : 768px)
+	/**/
+
+
+@media only screen and (min-width : 992px)
+	/**/
+
+
+
+@media only screen and (min-width : 1200px)
+	/**/
+@media (min-width : 240px) and (max-width : 991px)
+	html 
+		header
+			.carousel-main
+				height: 320px
+				position: relative
+				.photo1
+					size: 100% 320px 
+				.photo2
+					size: 100% 320px 
+				.photo3
+					size: 100% 320px 
+				.owl-prev
+					height: 320px
+					width: 40px
+					img
+						@include padding(140px, top)
+				.owl-next
+					height: 320px
+					width: 40px
+					img
+						@include padding(140px, top)
+		.main-login
+			.loginLoginFieldset
+				min-width: 240px
+				width: 240px
+				@include push-auto
+				@include border(1px, $white, all)
+				@include border-radius(9px, all)
+				@include margin(25px, top-bottom)
+				float: none
+				.forg	
+					float: none
+					line-height: 25px
+				.loginUsernameLabel, .loginPasswordLabel, .loginLoginButton, .forg
+					display: block
+					width: 220px
+					@include push-auto
+					@include margin(5px, top-bottom)
+					button
+						position: relative
+						left: 50%
+						@include margin(-37px, left)
+						
