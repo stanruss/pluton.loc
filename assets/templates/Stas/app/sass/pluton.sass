@@ -5,16 +5,16 @@
 /*General*/
 body
 	font-family: 'Roboto', sans-serif
-	color: #FFF
+	color: $white
 	line-height: 1.2em
 	font-size: 17px
 	line-height: 20px
 
 a
-	color: #181A1C
+	color: $grey
 	text-decoration: none
 	&:hover
-		color: #FECE1A
+		color: $accent
 		text-decoration: none
 
 h1, h2, h3, h4, h5, h6
@@ -26,10 +26,10 @@ h1
 p
 	padding: 10px
 	font-weight: 100
-	color: #fff
+	color: $white
 
 .navbar
-	background: #181A1C
+	background: $grey
 	margin-bottom: 0
 	min-height: 70px
 
@@ -39,8 +39,8 @@ p
 	padding-top: 0
 
 .navbar-inner
-	background: #181A1C
-	border-radius: 0
+	background: $grey
+	@include border-radius(0, all)
 	filter: none
 	border: none
 	box-shadow: none
@@ -58,58 +58,56 @@ p
 				margin: 10px 3px
 				-webkit-box-shadow: none
 				-moz-box-shadow: none
-				border: 1px solid #181A1C
+				@include border(1px, $grey, all)
 				box-shadow: none
 				font-size: 15px
 				text-shadow: none
-				color: #fff
-				transition: border-color 1s ease
+				color: $white
+				@include transition(border-color, 1s, ease)
 			&:hover > a
-				border: 1px solid #FECE1A
-				color: #fff
-				background-color: #181A1C
-				transition: border-color 1s ease
+				@include border(1px, $accent, all)
+				color: $white
+				background-color: $grey
+				@include transition(border-color, 1s, ease)
 		.active > a
-			border: 1px solid #FECE1A
-			color: #fff
-			background-color: #181A1C
-			transition: border-color 1s ease
+			@include border(1px, $accent, all)
+			color: $white
+			background-color: $grey
+			@include transition(border-color, 1s, ease)
 			&:hover, &:focus
-				border: 1px solid #FECE1A
-				color: #fff
-				background-color: #181A1C
-				transition: border-color 1s ease
+				@include border(1px, $accent, all)
+				color: $white
+				background-color: $grey
+				@include transition(border-color, 1s, ease)
 
 .nav-pills
 	margin-bottom: 30px
 	>
 		li > a
 			background: transparent
-			-webkit-border-radius: 0
-			-moz-border-radius: 0
-			border-radius: 0
+			@include border-radius(0, all)
 			margin-right: 5px
 			padding-left: 25px
 			padding-right: 25px
-			border: 1px solid #181A1C
+			@include border(1px, $grey, all)
 			&:hover
-				background: #181A1C
-				color: #fff
+				background: $grey
+				color: $white
 		.active > a
-			background: #181A1C
-			color: #fff
+			background: $grey
+			color: $white
 			&:hover, &:focus
-				background: #181A1C
-				color: #fff
+				background: $grey
+				color: $white
 
 .navbar .btn-navbar
 	&:hover
-		border-radius: 0
-		background: #FECE1A
-		color: #000
-	border-radius: 0
-	background: #FECE1A
-	color: #000
+		@include border-radius(0, all)
+		background: $accent
+		color: $black
+	@include border-radius(0, all)
+	background: $accent
+	color: $black
 
 /* 2. Layout */
 
@@ -127,7 +125,7 @@ p
 	text-align: center
 
 .highlighted-box
-	background: #F4F8F9
+	background: $light
 	padding: 20px 30px
 	h1
 		margin: 0px
@@ -135,27 +133,24 @@ p
 .large-text
 	line-height: 1.2em
 	font-size: 30px
-	color: #181A1C
+	color: $grey
 	padding: 20px
 	margin-bottom: 20px
 
 .highlighted-box
 	h1, p
-		color: #181A1C !important
+		color: $grey !important
 
 .circle-border
 	display: inline-block
-	-webkit-border-radius: 500px
-	-moz-border-radius: 500px
-	border-radius: 500px
-	-khtml-border-radius: 500px
-	border: 3px solid #fff
+	@include border-radius(500px, all)
+	@include border(3px, $white, all)
 
 .left-align, .right-align
 	text-align: left
 
 .error
-	color: #CF0000
+	color: $red
 	display: none
 
 .invisible
@@ -167,74 +162,64 @@ p
 	text-align: center
 	width: 0
 	height: 0
-	border-top: 30px solid #181A1C
-	border-left: 585px outset transparent
-	border-right: 585px outset transparent
+	@include border(30px, $grey, top)
+	@include border(585px, outset transparent, left)
+	@include border(585px, outset transparent, right)
 	position: relative
 
 /* 2.1 Animations */
 
 .zoom-in
-	-webkit-transform: scale(1, 1)
-	-moz-transform: scale(1, 1)
-	-o-transform: scale(1, 1)
-	-ms-transform: scale(1, 1)
-	-webkit-transition: all 250ms ease
-	-moz-transition: all 250ms ease
-	-o-transition: all 250ms ease
-	-ms-transition: all 250ms ease
-	transition: all 250ms ease
+	@include transform-scale(1)
+	@include transition(all, 250ms, ease)
 	&:hover
-		-webkit-transform: scale(1.1, 1.1)
-		-moz-transform: scale(1.1, 1.1)
-		-o-transform: scale(1.1, 1.1)
-		-ms-transform: scale(1.1, 1.1)
+		@include transform-scale(1.1)
 
 /* 2.2 Buttons - There are buttons on a transparent background, primary and secondary color background.*/
 
 .button
 	display: inline-block
-	border: 1px solid #181A1C
-	color: #181A1C
+	@include border(1px, $grey, all)
+	color: $grey
 	background-color: transparent
 	padding: 15px 30px
 	font-size: 17px
 	line-height: auto
 	&:visited, &:focus
 		display: inline-block
-		border: 1px solid #181A1C
-		color: #181A1C
+		@include border(1px, $grey, all)
+		color: $grey
 		background-color: transparent
 		padding: 15px 30px
 		font-size: 17px
 		line-height: auto
 	&:hover, &:active
-		background-color: #181A1C
-		color: #fff
+		background-color: $grey
+		color: $white
 
 .button-sp
 	border: none
-	background-color: #FECE1A
-	color: #181A1C
+	background-color: $accent
+	color: $grey
 	&:visited, &:focus
 		border: none
-		background-color: #FECE1A
-		color: #181A1C
+		background-color: $accent
+		color: $grey
 	&:hover, &:active
-		background-color: #181A1C
-		color: #FECE1A
+		background-color: $grey
+		color: $accent
 
 .button-ps
 	border: none
-	background-color: #181A1C
-	color: #FECE1A
+	background-color: $grey
+	color: $accent
 	&:visited, &:focus
 		border: none
-		background-color: #181A1C
-		color: #FECE1A
+		background-color: $grey
+		color: $accent
 	&:hover, &:active
-		background-color: #FECE1A
-		color: #181A1C
+		background-color: $accent
+		color: $grey
 
 /* 2.3 Thumbnails - Predefined bootstrap's thumbnail class. */
 
@@ -245,7 +230,7 @@ p
 	overflow: hidden
 	position: relative
 	border: 0
-	border-radius: 0
+	@include border-radius(0, all)
 	box-shadow: none
 	text-align: center
 	background: #191a1c
@@ -260,25 +245,21 @@ p
 		width: 80px
 		height: 80px
 		font-size: 40px
-		color: #fff
+		color: $white
 		text-decoration: none
 		line-height: 70px
 		text-align: center
 	&:hover .more
 		top: 40%
 		margin-top: -40px
-		-webkit-transition: all 0.3s ease-out
-		-moz-transition: all 0.3s ease-out
-		-o-transition: all 0.3 s ease-out
-		-ms-transition: all 0.3s ease-out
-		transition: all 0.3s ease-out
+		@include transition(all, .3s, ease-out)
 	h3, p
 		margin: 0
 		padding: 0
 		position: relative
 		z-index: 4
 	h3
-		color: #FECE1A
+		color: $accent
 		margin-top: 10px
 		font-size: 20px
 	> p
@@ -290,13 +271,9 @@ p
 		left: 0
 		width: 100%
 		height: 100%
-		background: #181A1C
+		background: $grey
 		position: absolute
-		-webkit-transition: all 0.2s ease-out
-		-moz-transition: all 0.2s ease-out
-		-o-transition: all 0.2 s ease-out
-		-ms-transition: all 0.2s ease-out
-		transition: all 0.2s ease-out
+		@include transition(all, .2s, ease-out)
 	&:hover .mask
 		top: 0
 
@@ -318,9 +295,9 @@ p
 			padding: 0
 			width: 32px
 			height: 32px
-			color: #FECE1A
+			color: $accent
 			&:hover
-				color: #181A1C
+				color: $grey
 
 /* 3. Sections */
 
@@ -338,42 +315,42 @@ p
 			padding: 0
 		> p
 			font-size: 20px
-			color: #FFF
+			color: $white
 			font-weight: lighter
 
 .primary-section
-	background: #181A1C
+	background: $grey
 	.triangle
-		border-top: 40px solid #FECE1A
+		@include border(40px, $accent, top)
 	.title
-		border-bottom: 1px solid #FFF
+		@include border(1px, $white, bottom)
 		p
-			color: #FECE1A
-	color: #FECE1A
+			color: $accent
+	color: $accent
 	h3
-		color: #FECE1A
+		color: $accent
 	h1
-		color: #FFF
+		color: $white
 
 .secondary-section
-	background: #FECE1A
+	background: $accent
 	.title
-		border-bottom: 1px solid #181A1C
+		@include border(1px, $grey, bottom)
 	h1, .title p
-		color: #181A1C
+		color: $grey
 
 /* Third section use bacground image */
 
 .third-section
 	padding-bottom: 70px
-	background: #181A1C url(../pluton/images/brand-bg.png) no-repeat center
-	border-top: 6px solid #FECE1A
+	background: $grey url(../pluton/images/brand-bg.png) no-repeat center
+	@include border(6px, $accent, top)
 	.container
 		padding-top: 20px
 		position: relative
 	.title
-		border-bottom: 1px solid #A1AAB7
-		color: #FECE1A
+		@include border(1px, $sgrey, bottom)
+		color: $accent
 
 .sub-section
 	margin-top: 30px
@@ -398,7 +375,7 @@ p
 
 .single-project
 	margin-bottom: 30px
-	background: #181A1C
+	background: $grey
 	img
 		width: 100%
 
@@ -410,18 +387,18 @@ p
 .project-title
 	margin-top: 15px
 	margin-bottom: 15px
-	border-bottom: 1px solid #FECE1A
+	@include border(1px, $accent, bottom)
 	h3
 		float: left
 		margin-top: 0
 		padding: 0
 		width: 80%
 	.close
-		color: #FECE1A
+		color: $accent
 		margin-top: 10px
 
 .project-info span, .project-title h3
-	color: #FECE1A
+	color: $accent
 
 .project-info
 	font-weight: 100
@@ -449,21 +426,21 @@ p
 	-webkit-box-sizing: border-box
 	-moz-box-sizing: border-box
 	padding: 10px
-	border: 1px solid #fff
+	@include border(1px, $white, all)
 	&:hover .social
 		z-index: 5
 		a
-			color: #fff
+			color: $white
 	.mask
-		background: #FECE1A
+		background: $accent
 		h2
 			margin-top: 20%
-		color: #181A17
+		color: $grey
 		h3, p
-			color: #181A17
+			color: $grey
 	&:hover
 		h3, .social a:hover
-			color: #181A17
+			color: $grey
 
 .about-text
 	margin-top: 30px
@@ -479,7 +456,7 @@ p
 	margin: 0px
 	li
 		margin-bottom: 30px
-		background: #FFF
+		background: $white
 		height: 40px
 		padding: 1px
 		h3
@@ -489,18 +466,18 @@ p
 			margin: 0
 			left: 10px
 			z-index: 1
-			color: #181A1C
+			color: $grey
 		.bar
 			height: 40px
 			position: absolute
-			background-color: #FECE1A
+			background-color: $accent
 
 /* 3.4 Clients */
 
 .client-slider img
-	border: 1px solid white
+	@include border(1px, $white, all)
 	&:hover
-		background-color: #FECE1A
+		background-color: $accent
 
 .client-nav
 	list-style: none
@@ -512,25 +489,25 @@ p
 		a
 			display: inherit
 			padding: 5px
-			background: #FECE1A
-			border-radius: 3px
+			background: $accent
+			@include border-radius(3px, all)
 			width: 20px
 			height: 20px
 			&:hover
-				background: #181A1C
+				background: $grey
 
 .testimonial
 	p
-		color: #181A1C
-		background: #FECE1A
+		color: $grey
+		background: $accent
 		padding: 15px
 		margin: 0
 	.arrow
 		margin-left: 10px
 		width: 0
-		border-top: 10px solid #FECE1A
-		border-left: 20px outset transparent
-		border-right: 20px outset transparent
+		@include border(10px, $accent, top)
+		@include border(20px, outset transparent, left) 
+		@include border(20px, outset transparent, right) 
 	.whopic
 		display: inline-block
 		img
@@ -562,52 +539,49 @@ p
 	margin-bottom: 20px
 
 .price-column
-	background-color: white
-	-webkit-border-radius: 10px
-	-moz-border-radius: 10px
-	border-radius: 10px
+	background-color: $white
+	@include border-radius(10px, all)
 	padding-bottom: 20px
 	margin: 0 auto
 	text-align: center
 	h3
-		background-color: #181A1C
+		background-color: $grey
 		text-transform: uppercase
 		text-align: center
-		color: #FECE1A
+		color: $accent
 		padding: 40px 0px
 		font-size: 36px
 		margin-top: 0px
-		-moz-border-radius: 0px
-		-webkit-border-radius: 10px 10px 0px 0px
-		border-radius: 10px 10px 0px 0px
+		@include border-radius(10px, right-left-top)
+		@include border-radius(0, right-left-bottom)
 	.list
 		list-style: none
 		margin: 20px 50px
 		li
 			font-weight: lighter
-			color: #747C89
+			color: $mgrey
 			font-size: 20px
-			border-bottom: 1px solid #747C89
+			@include border(1px, $mgrey, bottom)
 			padding: 25px 0px
 			&.price
 				text-align: center
 				font-size: 31px
-				background-color: white
-				color: #747C89
+				background-color: $white
+				color: $mgrey
 				margin-top: 25px
 
 .price-text
 	margin: 30px 0 20px
 	font-size: 20px
-	color: #181A1C
+	color: $grey
 	font-weight: normal
 
 /* 3.6 Newsletter */
 
 .newsletter
-	color: #D7DDDE
+	color: $slight
 	h2
-		color: #D7DDDE
+		color: $slight
 	.title h2
 		text-align: left
 		padding: 0
@@ -622,15 +596,15 @@ p
 		margin: 0 0 0 20px
 	.button-sp
 		&:hover, &:active
-			background-color: #FFF
-			color: #181A1C
+			background-color: $white
+			color: $grey
 
 /* 3.7 Contact */
 
 .contact
-	background: #FECE1A
+	background: $accent
 	h1, h2, h3, h4, h5, h6, .section .title > p, .social > li > a
-		color: #181A1C
+		color: $grey
 	textarea
 		padding: 10px
 		line-height: 20px
@@ -644,14 +618,14 @@ p
 		height: 120px
 
 .contacts, .contact .social
-	color: #fff
+	color: $white
 	list-style: none
 	margin-left: 10px
 
 .contacts > li
 	margin-top: 15px
 	> a
-		color: #fff
+		color: $white
 
 .contact-info
 	margin-top: 10px
@@ -671,7 +645,7 @@ p
 	margin-bottom: 20px
 	width: 100%
 	height: 500px
-	color: #29383F
+	color: $dgreen
 	position: absolute
 	left: 0
 	top: 0
@@ -685,57 +659,56 @@ p
 		padding: 10px 10px
 		font-family: 'Porta'
 		font-size: 50px
-		transition: margin 0.4s
-		-webkit-transition: margin 0.4s
+		@include transition(margin, .4s, ease)
 		a
-			color: #fff
+			color: $white
 			&:hover
-				color: #181A1C
+				color: $grey
 
 .contact-form
-	background: #fff
+	background: $white
 	background: rgba(255, 255, 255, 0.9)
 	z-index: 110
 	position: relative
 	margin-top: -25px
 	padding: 20px
 	h3
-		color: #838589
+		color: $tgrey
 		padding-bottom: 20px
 
 .message-btn
-	border: 1px solid #747C89
-	color: #747C89
+	@include border(1px, $mgrey, all)
+	color: $mgrey
 	background-color: transparent
 	padding: 15px 30px
 	font-size: 17px
 	&:hover
-		background-color: #FECE1A
+		background-color: $accent
 
 .contact-info
 	text-align: center
 	font-size: 22px
 
 .info-mail
-	border: 1px solid white
+	@include border(1px, $white, all)
 	width: 60%
 	margin: 0 auto
 	padding: 15px
-	color: #181A1C
+	color: $grey
 
 .black
-	color: #181A1C
+	color: $grey
 
 /* 3.8 Footer */
 
 .footer
-	background: #181A1C
+	background: $grey
 	text-align: center
 	> p
-		color: #fff
+		color: $white
 		margin: 0
 	a
-		color: #FECE1A
+		color: $accent
 		&:hover, &:focus
 			text-decoration: underline
 
@@ -745,18 +718,18 @@ p
 	vertical-align: middle
 	width: 39px
 	height: 39px
-	border-radius: 5px
+	@include border-radius(5px, all)
 	font-size: 20px
 	position: fixed
 	bottom: 30px
 	right: 20px
-	border: 1px solid #fff
+	@include border(1px, $white, all)
 	display: none
-	background: #FECE1A
+	background: $accent
 	> a
 		position: relative
 		top: 7px
-		color: #fff
+		color: $white
 
 /* 4 Responsible */
 
@@ -765,7 +738,7 @@ p
 		margin-left: -41px
 		width: 80px
 		height: 80px
-		border-radius: 40px
+		@include border-radius(40px, all)
 		line-height: 80px
 
 @media (max-width: 979px)
@@ -800,7 +773,7 @@ p
 			margin-left: -21px
 			width: 40px
 			height: 40px
-			border-radius: 30px
+			@include border-radius(30px, all)
 			line-height: 40px
 		&:hover .more
 			margin-top: -20px
