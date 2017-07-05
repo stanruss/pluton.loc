@@ -2,483 +2,287 @@
 @import "vars"
 @import "mixins/mixins"
 @import "mixins/mixin"
-
-[class^="icon-"]:before, [class*=" icon-"]:before
-	font-family: "porta"
-	font-style: normal
-	font-weight: normal
-	speak: none
-	display: inline-block
-	text-decoration: inherit
-	text-align: center
-	opacity: .8
-	
-	font-variant: normal
-	text-transform: none
-	
-	font-size: 120%
-	
-	text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3)
-
-.icon-plus:before
-	content: '\e826'
-
-''
-
-.icon-email:before
-	content: '\e825'
-
-''
-
-.icon-cog:before
-	content: '\e823'
-
-''
-
-.icon-ok:before
-	content: '\e80a'
-
-''
-
-.icon-cancel:before
-	content: '\e80b'
-
-''
-
-.icon-calendar:before
-	content: '\e10b'
-
-''
-
-.icon-help-circled:before
-	content: '\e81a'
-
-''
-
-.icon-location:before
-	content: '\e81b'
-
-''
-
-.icon-left-open:before
-	content: '\e804'
-
-''
-
-.icon-right-open:before
-	content: '\e803'
-
-''
-
-.icon-up-open:before
-	content: '\e805'
-
-''
-
-.icon-menu-1:before
-	content: '\e800'
-
-''
-
-.icon-link-ext:before
-	content: '\e822'
-
-''
-
-.icon-menu:before
-	content: '\e801'
-
-''
-
-.icon-mail-alt:before
-	content: '\e81c'
-
-''
-
-.icon-angle-left:before
-	content: '\e81e'
-
-''
-
-.icon-angle-right:before
-	content: '\e81f'
-
-''
-
-.icon-angle-up:before
-	content: '\e820'
-
-''
-
-.icon-angle-down:before
-	content: '\e821'
-
-''
-
-.icon-desktop:before
-	content: '\e814'
-
-''
-
-.icon-mobile:before
-	content: '\e81d'
-
-''
-
-.icon-calendar-empty:before
-	content: '\e802'
-
-''
-
-.icon-github-circled:before
-	content: '\e811'
-
-''
-
-.icon-vimeo-circled:before
-	content: '\e808'
-
-''
-
-.icon-twitter-circled:before
-	content: '\e807'
-
-''
-
-.icon-facebook-circled:before
-	content: '\e80e'
-
-''
-
-.icon-gplus-circled:before
-	content: '\e80d'
-
-''
-
-.icon-pinterest-circled:before
-	content: '\e809'
-
-''
-
-.icon-linkedin-circled:before
-	content: '\e806'
-
-''
-
-.icon-dribbble-circled:before
-	content: '\e80f'
-
-''
-
-.icon-stumbleupon-circled:before
-	content: '\e810'
-
-''
-
-.icon-lastfm-circled:before
-	content: '\e812'
-
-''
-
-.icon-skype-circled:before
-	content: '\e813'
-
-''
-
-.icon-globe:before
-	content: '\e815'
-
-''
-
-.icon-award:before
-	content: '\e816'
-
-''
-
-.icon-user:before
-	content: '\e818'
-
-''
-
-.icon-users:before
-	content: '\e819'
-
-''
-
-.icon-chart-bar:before
-	content: '\e80c'
-
-''
-
-.icon-phone:before
-	content: '\e824'
-
-''
-
-.icon-megaphone:before
-	content: '\e817'
-
-''
-
-*
-	@include margin(0, all)
-	@include padding(0, all)
-	box-sizing: border-box
-
-
-
-#container
-	position: relative
-	&:after
-		content: ""
-		display: block
-		clear: both
-		height: 0
-
-#menu
-	position: relative
-	float: left
-	width: 100%
-	@include padding(0, top-bottom)
-	@include padding(20px, right-left)
-	background: $white
-	list-style: none
-	ul
-		list-style: none
-	> li
-		float: left
-		position: relative
-		perspective: 1000px
-	a
-		display: block
-		position: relative
-		z-index: 10
-		@include padding(13px, top-bottom)
-		@include padding(20px, right-left)
+/*General*/
+body
+	font-family: 'Roboto', sans-serif
+	color: #FFF
+	line-height: 1.2em
+	font-size: 17px
+	line-height: 20px
+
+a
+	color: #181A1C
+	text-decoration: none
+	&:hover
+		color: #FECE1A
 		text-decoration: none
-		line-height: 1
-		font-size: 12px
-		background: transparent
-		@include transition(all, .25s, ease-in-out)
-		@include hardware
-	> li:hover > a
-		background: $main-color
-		color: $white
-		text-shadow: none
-	li
-		ul
-			position: absolute
-			left: 0
-			z-index: 1
-			width: 200px
-			@include padding(0, all)
-			opacity: 0
-			visibility: hidden
+
+h1, h2, h3, h4, h5, h6
+	font-weight: normal
+
+h1
+	margin: 10px
+
+p
+	padding: 10px
+	font-weight: 100
+	color: #fff
+
+.navbar
+	background: #181A1C
+	margin-bottom: 0
+	min-height: 70px
+
+.navbar-fixed-top
+	min-height: 60px
+	height: 60px
+	padding-top: 0
+
+.navbar-inner
+	background: #181A1C
+	border-radius: 0
+	filter: none
+	border: none
+	box-shadow: none
+
+.navbar
+	.brand img
+		width: 120px
+		height: 40px
+	.nav >
+		li
+			> a
+				text-transform: uppercase
+				line-height: auto
+				vertical-align: middle
+				margin: 10px 3px
+				-webkit-box-shadow: none
+				-moz-box-shadow: none
+				border: 1px solid #181A1C
+				box-shadow: none
+				font-size: 15px
+				text-shadow: none
+				color: #fff
+				transition: border-color 1s ease
+			&:hover > a
+				border: 1px solid #FECE1A
+				color: #fff
+				background-color: #181A1C
+				transition: border-color 1s ease
+		.active > a
+			border: 1px solid #FECE1A
+			color: #fff
+			background-color: #181A1C
+			transition: border-color 1s ease
+			&:hover, &:focus
+				border: 1px solid #FECE1A
+				color: #fff
+				background-color: #181A1C
+				transition: border-color 1s ease
+
+.nav-pills
+	margin-bottom: 30px
+	>
+		li > a
 			background: transparent
-			overflow: hidden
-			transform-origin: 50% 0%
-		&:hover ul
-			position: relative
-			@include padding(15px, top-bottom)
-			@include padding(0, right-left)
-			background: $main-color
-			opacity: 1
-			visibility: visible
-			animation-name: swingdown
-			animation-duration: 1s
-			animation-timing-function: ease
-		li a
-			@include padding(15px, left)
-			font-weight: 400
-			color: $white
-			text-shadow: none
-			@include transition (all, .15s, linear)
-			@include hardware
+			-webkit-border-radius: 0
+			-moz-border-radius: 0
+			border-radius: 0
+			margin-right: 5px
+			padding-left: 25px
+			padding-right: 25px
+			border: 1px solid #181A1C
 			&:hover
-				color: $main-color
-				background: $white
+				background: #181A1C
+				color: #fff
+		.active > a
+			background: #181A1C
+			color: #fff
+			&:hover, &:focus
+				background: #181A1C
+				color: #fff
 
-@keyframes swingdown
-	0%
-		opacity: .99999
-		transform: rotateX(90deg)
+.navbar .btn-navbar
+	&:hover
+		border-radius: 0
+		background: #FECE1A
+		color: #000
+	border-radius: 0
+	background: #FECE1A
+	color: #000
 
-	30%
-		transform: rotateX(-20deg) rotateY(5deg)
-		animation-timing-function: ease-in-out
+/* 2. Layout */
 
-	65%
-		transform: rotateX(20deg) rotateY(-3deg)
-		animation-timing-function: ease-in-out
-
-	100%
-		transform: rotateX(0)
-		animation-timing-function: ease-in-out
-
-.service
-	@include margin(20px, top)
-	@include padding(15px, top)
-	h2
-		@include padding(15px, top)
-	p
-		@include padding(0, top-bottom)
-		@include padding(50px, right-left)
-	img
-		width: 150px
-		height: 150px
-.centered, .center
-	@include margin(auto, right-left)
+.centered
+	margin-left: auto
+	margin-right: auto
 	float: none
 	text-align: center
-.zoom-in
-	@include transform-scale(1)
-	@include transition(all, 250ms, ease)
-	@include hardware
-	&:hover
-		@include transform-scale(1.1)
-.primary-section
-	background-color: $white
+
+/* Use this class if you want ceter element with span* class */
+
+.center
+	float: none !important
+	margin: 0 auto !important
+	text-align: center
+
+.highlighted-box
+	background: #F4F8F9
+	padding: 20px 30px
+	h1
+		margin: 0px
+
+.large-text
+	line-height: 1.2em
+	font-size: 30px
+	color: #181A1C
+	padding: 20px
+	margin-bottom: 20px
+
+.highlighted-box
 	h1, p
-		text-align: center
-	
-.team .thumbnail
-	box-sizing: border-box
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	@include padding(10px, all)
-	@include border(1px, $white, 'all')
-	&:hover .social
-		z-index: 5
-		a
-			color: $white
-	.mask
-		background: $accent
-		h2
-			@include margin(20%, top)
-		color: $grey
-		h3, p
-			color: $grey
-	&:hover
-		h3, .social a:hover
-			color: $grey
+		color: #181A1C !important
 
-.about-text
-	@include margin(30px, top)
-	p
-		@include padding(0, all)
-		font-size: 16px
+.circle-border
+	display: inline-block
+	-webkit-border-radius: 500px
+	-moz-border-radius: 500px
+	border-radius: 500px
+	-khtml-border-radius: 500px
+	border: 3px solid #fff
 
-.skills
-	list-style-type: none
+.left-align, .right-align
+	text-align: left
+
+.error
+	color: #CF0000
+	display: none
+
+.invisible
+	display: none
+	visibility: visible
+
+.triangle
+	margin: 0 auto
+	text-align: center
+	width: 0
+	height: 0
+	border-top: 30px solid #181A1C
+	border-left: 585px outset transparent
+	border-right: 585px outset transparent
 	position: relative
-	@include margin(0, all)
-	li
-		@include margin(30px, bottom)
-		background: $white
-		height: 40px
-		@include padding(1px, all)
-		h3
-			position: relative
-			font-size: 15px
-			@include padding(0, all)
-			@include margin(0, all)
-			left: 10px
-			z-index: 1
-			color: $main-color
-		.bar
-			height: 40px
-			position: absolute
-			background-color: $accent
+
+/* 2.1 Animations */
+
+.zoom-in
+	-webkit-transform: scale(1, 1)
+	-moz-transform: scale(1, 1)
+	-o-transform: scale(1, 1)
+	-ms-transform: scale(1, 1)
+	-webkit-transition: all 250ms ease
+	-moz-transition: all 250ms ease
+	-o-transition: all 250ms ease
+	-ms-transition: all 250ms ease
+	transition: all 250ms ease
+	&:hover
+		-webkit-transform: scale(1.1, 1.1)
+		-moz-transform: scale(1.1, 1.1)
+		-o-transform: scale(1.1, 1.1)
+		-ms-transform: scale(1.1, 1.1)
+
+/* 2.2 Buttons - There are buttons on a transparent background, primary and secondary color background.*/
 
 .button
 	display: inline-block
-	@include border(1px, $main-color, 'all')
-	color: $main-color
+	border: 1px solid #181A1C
+	color: #181A1C
 	background-color: transparent
-	@include padding(15px, top-bottom)
-	@include padding(30px, right-left)
+	padding: 15px 30px
 	font-size: 17px
 	line-height: auto
 	&:visited, &:focus
 		display: inline-block
-		@include border(1px, $main-color, 'all')
-		color: $main-color
+		border: 1px solid #181A1C
+		color: #181A1C
 		background-color: transparent
-		@include padding(15px, top-bottom)
-		@include padding(30px, right-left)
+		padding: 15px 30px
 		font-size: 17px
 		line-height: auto
 	&:hover, &:active
-		background-color: $main-color
-		color: $white
+		background-color: #181A1C
+		color: #fff
 
 .button-sp
 	border: none
-	background-color: $accent
-	color: $main-color
+	background-color: #FECE1A
+	color: #181A1C
 	&:visited, &:focus
 		border: none
-		background-color: $accent
-		color: $main-color
+		background-color: #FECE1A
+		color: #181A1C
 	&:hover, &:active
-		background-color: $main-color
-		color: $accent
+		background-color: #181A1C
+		color: #FECE1A
 
 .button-ps
 	border: none
-	background-color: $main-color
-	color: $accent
+	background-color: #181A1C
+	color: #FECE1A
 	&:visited, &:focus
 		border: none
-		background-color: $main-color
-		color: $accent
+		background-color: #181A1C
+		color: #FECE1A
 	&:hover, &:active
-		background-color: $accent
-		color: $main-color
+		background-color: #FECE1A
+		color: #181A1C
+
+/* 2.3 Thumbnails - Predefined bootstrap's thumbnail class. */
 
 .thumbnail
 	width: 100%
 	height: 100%
-	@include padding(0, all)
+	padding: 0
 	overflow: hidden
 	position: relative
 	border: 0
 	border-radius: 0
 	box-shadow: none
 	text-align: center
-	background: $lgrey
+	background: #191a1c
 	.more
 		display: block
 		z-index: 4
 		position: absolute
 		top: -100px
 		left: 50%
-		@include margin(0, top-bottom)
-		@include margin(auto, right-left)
-		@include margin(-41px, left)
+		margin: 0 auto
+		margin-left: -41px
 		width: 80px
 		height: 80px
 		font-size: 40px
-		color: $white
+		color: #fff
 		text-decoration: none
 		line-height: 70px
 		text-align: center
 	&:hover .more
 		top: 40%
-		@include margin(-40px, top)
-		@include transition(all, 0.3s, ease-out)
-		@include hardware
+		margin-top: -40px
+		-webkit-transition: all 0.3s ease-out
+		-moz-transition: all 0.3s ease-out
+		-o-transition: all 0.3 s ease-out
+		-ms-transition: all 0.3s ease-out
+		transition: all 0.3s ease-out
 	h3, p
-		@include margin(0, all)
-		@include padding(0, all)
+		margin: 0
+		padding: 0
 		position: relative
 		z-index: 4
 	h3
-		color: $accent
-		@include margin(10px, top)
+		color: #FECE1A
+		margin-top: 10px
 		font-size: 20px
 	> p
-		@include padding(20px, bottom)
+		padding-bottom: 20px
 	.mask
 		opacity: 0.85
 		filter: alpha(opacity = 85)
@@ -486,96 +290,258 @@
 		left: 0
 		width: 100%
 		height: 100%
-		background: $main-color
+		background: #181A1C
 		position: absolute
-		@include transition(all, 0.2s, ease-out)
-		@include hardware
+		-webkit-transition: all 0.2s ease-out
+		-moz-transition: all 0.2s ease-out
+		-o-transition: all 0.2 s ease-out
+		-ms-transition: all 0.2s ease-out
+		transition: all 0.2s ease-out
 	&:hover .mask
 		top: 0
-.pluton-social
-	position: relative
-	z-index: 2
+
+/* 2.4 Socail icons */
+
+.social
 	list-style: none
 	float: none
 	position: relative
-	@include margin(5px, top-bottom)
-	@include margin(auto, right-left)
+	margin: 5px auto
 	li
 		display: inline-block
 		line-height: 32px
 		font-family: 'Porta'
 		font-size: 32px
-		@include padding(0, top-bottom)
-		@include padding(5px, right-left)
+		padding: 0 5px
 		a
-			@include margin(0, all)
-			@include padding(0, all)
+			margin: 0
+			padding: 0
 			width: 32px
 			height: 32px
-			color: $accent
+			color: #FECE1A
 			&:hover
-				color: $main-color
+				color: #181A1C
+
+/* 3. Sections */
+
+.section
+	padding-bottom: 50px
+	.container
+		padding-top: 50px
+	.title
+		text-align: center
+		padding: 10px
+		margin-bottom: 30px
+		h1
+			font-weight: normal
+			margin-bottom: 20px
+			padding: 0
+		> p
+			font-size: 20px
+			color: #FFF
+			font-weight: lighter
+
+.primary-section
+	background: #181A1C
+	.triangle
+		border-top: 40px solid #FECE1A
+	.title
+		border-bottom: 1px solid #FFF
+		p
+			color: #FECE1A
+	color: #FECE1A
+	h3
+		color: #FECE1A
+	h1
+		color: #FFF
+
+.secondary-section
+	background: #FECE1A
+	.title
+		border-bottom: 1px solid #181A1C
+	h1, .title p
+		color: #181A1C
+
+/* Third section use bacground image */
+
+.third-section
+	padding-bottom: 70px
+	background: #181A1C url(../pluton/images/brand-bg.png) no-repeat center
+	border-top: 6px solid #FECE1A
+	.container
+		padding-top: 20px
+		position: relative
+	.title
+		border-bottom: 1px solid #A1AAB7
+		color: #FECE1A
+
+.sub-section
+	margin-top: 30px
+	.title
+		padding: 0
+
+/* 3.1 Services */
+
+.service
+	margin-top: 20px
+	padding-top: 15px
+	h2
+		padding-top: 15px
+	p
+		padding: 0px 50px
+		height: 60px
+	img
+		width: 150px
+		height: 150px
+
+/* 3.2 Portfolio */
+
+.single-project
+	margin-bottom: 30px
+	background: #181A1C
+	img
+		width: 100%
+
+.project-description
+	padding-right: 20px
+	p
+		padding-left: 0
+
+.project-title
+	margin-top: 15px
+	margin-bottom: 15px
+	border-bottom: 1px solid #FECE1A
+	h3
+		float: left
+		margin-top: 0
+		padding: 0
+		width: 80%
+	.close
+		color: #FECE1A
+		margin-top: 10px
+
+.project-info span, .project-title h3
+	color: #FECE1A
+
+.project-info
+	font-weight: 100
+	padding: 10px 0
+	span
+		width: 80px
+		display: inline-block
+	div
+		margin-bottom: 5px
+
+.close
+	float: right
+	width: 40px
+	height: 40px
+	text-align: center
+
+#portfolio-grid .mix
+	opacity: 0
+	display: none
+
+/* 3.3 About */
+
+.team .thumbnail
+	box-sizing: border-box
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	padding: 10px
+	border: 1px solid #fff
+	&:hover .social
+		z-index: 5
+		a
+			color: #fff
+	.mask
+		background: #FECE1A
+		h2
+			margin-top: 20%
+		color: #181A17
+		h3, p
+			color: #181A17
+	&:hover
+		h3, .social a:hover
+			color: #181A17
+
+.about-text
+	margin-top: 30px
+	p
+		padding: 0
+		font-size: 16px
+
+/*  SKILLS BAR */
+
+.skills
+	list-style-type: none
+	position: relative
+	margin: 0px
+	li
+		margin-bottom: 30px
+		background: #FFF
+		height: 40px
+		padding: 1px
+		h3
+			position: relative
+			font-size: 15px
+			padding: 0
+			margin: 0
+			left: 10px
+			z-index: 1
+			color: #181A1C
+		.bar
+			height: 40px
+			position: absolute
+			background-color: #FECE1A
+
+/* 3.4 Clients */
 
 .client-slider img
-	@include border(1px, $white, 'all')
+	border: 1px solid white
 	&:hover
-		background-color: $accent
+		background-color: #FECE1A
 
 .client-nav
 	list-style: none
-	@include margin(10px, top)
-	@include margin(50px, right)
+	margin-top: 10px
 	li
 		float: left
 		display: block
-		@include margin(10px, left)
+		margin-left: 10px
 		a
 			display: inherit
-			@include padding(5px, all)
-			background: $accent
-			@include border-radius(3px, 'all')
-			width: 30px
-			height: 30px
-			font-size: 14px
+			padding: 5px
+			background: #FECE1A
+			border-radius: 3px
+			width: 20px
+			height: 20px
 			&:hover
-				background: $main-color
-.third-section
-	@include padding(70px, bottom)
-	background: $main-color url(../libs/pluton/images/brand-bg.png) no-repeat center
-	@include border(6px, $accent, 'top')
-	.container
-		@include padding(20px, top)
-		position: relative
-	.title
-		@include border(1px, $sgrey, 'bottom')
-		color: $accent
-		@include margin(18px, bottom)
-.sub-section
-	h3
-		@include margin(50px, left)
+				background: #181A1C
+
 .testimonial
 	p
-		color: $main-color
-		background: $accent
-		@include padding(15px, all)
-		@include margin(0, all)
+		color: #181A1C
+		background: #FECE1A
+		padding: 15px
+		margin: 0
 	.arrow
-		@include margin(10px, left)
+		margin-left: 10px
 		width: 0
-		@include border (10px, $accent, 'top')
-		@include border (20px, outset transparent, 'right-left')
-		
+		border-top: 10px solid #FECE1A
+		border-left: 20px outset transparent
+		border-right: 20px outset transparent
 	.whopic
 		display: inline-block
 		img
-			@include margin(10px, top)
+			margin-top: 10px
 			width: 50px
 			height: 50px
 			float: left
 		strong
 			float: left
-			@include margin(10px, top)
-			@include padding(10px, left)
+			margin-top: 10px
+			padding-left: 10px
 		small
 			display: block
 			font-size: 12px
@@ -584,174 +550,268 @@
 	display: block
 	font-size: 22px
 	text-align: center
-	@include margin(0, top-bottom)
-	@include margin(auto, right-left)
-	@include margin(30px, top)
+	margin: 0 auto
+	margin-top: 30px
 	width: 70%
 	line-height: 1.3em
+
+/* 3.5 Price table */
+
 .price-table
-	@include margin(70px, top)
-	@include margin(20px, bottom)
+	margin-top: 70px
+	margin-bottom: 20px
 
 .price-column
-	background-color: $white
-	@include border-radius(10px, 'all')
-	@include padding(20px, bottom)
-	@include margin(0, top-bottom)
-	@include margin(auto, right-left)
+	background-color: white
+	-webkit-border-radius: 10px
+	-moz-border-radius: 10px
+	border-radius: 10px
+	padding-bottom: 20px
+	margin: 0 auto
 	text-align: center
 	h3
-		background-color: $main-color
+		background-color: #181A1C
 		text-transform: uppercase
 		text-align: center
-		color: $accent
-		@include padding(40px, top-bottom)
-		@include padding(0, right-left)
+		color: #FECE1A
+		padding: 40px 0px
 		font-size: 36px
-		@include margin(0, top)
-		@include border-radius(10px, 'right-left-top')
-		@include border-radius(0, 'right-left-bottom')
+		margin-top: 0px
+		-moz-border-radius: 0px
+		-webkit-border-radius: 10px 10px 0px 0px
+		border-radius: 10px 10px 0px 0px
 	.list
 		list-style: none
-		@include margin(20px, top-bottom)
-		@include margin(50px, right-left)
+		margin: 20px 50px
 		li
 			font-weight: lighter
-			color: $mgrey
+			color: #747C89
 			font-size: 20px
-			@include border(1px, $mgrey, 'bottom')
-			@include padding(25px, top-bottom)
-			@include padding(0, right-left)
+			border-bottom: 1px solid #747C89
+			padding: 25px 0px
 			&.price
 				text-align: center
 				font-size: 31px
-				background-color: $white
-				color: $mgrey
-				@include margin(25px, top)
+				background-color: white
+				color: #747C89
+				margin-top: 25px
 
 .price-text
 	margin: 30px 0 20px
 	font-size: 20px
-	color: $main-color
+	color: #181A1C
 	font-weight: normal
+
+/* 3.6 Newsletter */
+
 .newsletter
-	color: $white
+	color: #D7DDDE
 	h2
-		color: $white
+		color: #D7DDDE
 	.title h2
 		text-align: left
-		@include padding(0, all)
-		@include margin(0, all)
+		padding: 0
+		margin: 0
 	form
 		text-align: right
 	input
-		@include margin(10px, top)
-		@include padding(15px, all)
+		margin-top: 10px
+		padding: 15px
 		height: auto
 	button
 		margin: 0 0 0 20px
 	.button-sp
 		&:hover, &:active
-			background-color: $white
-			color: $main-color
-.error
-	color: $red
-	display: none
+			background-color: #FFF
+			color: #181A1C
+
+/* 3.7 Contact */
+
 .contact
-	background: $accent
+	background: #FECE1A
 	h1, h2, h3, h4, h5, h6, .section .title > p, .social > li > a
-		color: $main-color
+		color: #181A1C
 	textarea
-		@include padding(10px, all)
+		padding: 10px
 		line-height: 20px
 		height: auto
-		width: 100%
 	input
 		&[type="text"], &[type="email"]
-			width: 100%
+			padding: 10px
 			line-height: 20px
 			height: auto
 	textarea
 		height: 120px
 
 .contacts, .contact .social
-	color: $white
+	color: #fff
 	list-style: none
-	@include margin(10px, left)
+	margin-left: 10px
 
 .contacts > li
-	@include margin(15px, top)
+	margin-top: 15px
 	> a
-		color: $white
+		color: #fff
 
 .contact-info
-	@include margin(10px, top-bottom)
+	margin-top: 10px
+	margin-bottom: 10px
 	p
 		font-weight: normal
 	.icon
-		@include margin(10px, top-bottom)
-		@include margin(auto, right-left)
+		margin: 10px auto
 		font-size: 30px
 
 .map-wrapper
 	position: relative
+	height: 500px
+
+.map-canvas
+	position: absolute
+	margin-bottom: 20px
+	width: 100%
+	height: 500px
+	color: #29383F
+	position: absolute
+	left: 0
+	top: 0
+	right: 0
 
 .contact .social
-	@include margin(0, left)
+	display: inline-block
+	margin-left: 0
 	li
 		line-height: 32px
-		@include padding(10px, all)
+		padding: 10px 10px
 		font-family: 'Porta'
 		font-size: 50px
 		transition: margin 0.4s
 		-webkit-transition: margin 0.4s
-		display: inline-block
 		a
-			color: $white
+			color: #fff
 			&:hover
-				color: $main-color
+				color: #181A1C
 
 .contact-form
-	background: $white
+	background: #fff
 	background: rgba(255, 255, 255, 0.9)
 	z-index: 110
 	position: relative
-	@include margin(0, top)
-	@include padding(20px, all)
+	margin-top: -25px
+	padding: 20px
 	h3
-		color: $tgrey
-		@include padding(20px, bottom)
+		color: #838589
+		padding-bottom: 20px
 
 .message-btn
-	border: 1px solid $mgrey
-	color: $mgrey
+	border: 1px solid #747C89
+	color: #747C89
 	background-color: transparent
-	@include padding(15px, top-bottom)
-	@include padding(30px, right-left)
+	padding: 15px 30px
 	font-size: 17px
 	&:hover
-		background-color: $accent
+		background-color: #FECE1A
 
 .contact-info
 	text-align: center
-	font-size: 18px
+	font-size: 22px
+
 .info-mail
-	@include border(1px, $white, 'all')
-	width: 100%
-	@include margin(0, top-bottom)
-	@include margin(auto, right-left)
-	@include padding(15px, all)
-	color: $main-color
+	border: 1px solid white
+	width: 60%
+	margin: 0 auto
+	padding: 15px
+	color: #181A1C
 
 .black
-	color: $main-color
+	color: #181A1C
+
+/* 3.8 Footer */
+
 .footer
-	background: $main-color
+	background: #181A1C
 	text-align: center
 	> p
-		color: $white
-		@include margin(0, all)
+		color: #fff
+		margin: 0
 	a
-		color: darken($accent, 0%)
+		color: #FECE1A
 		&:hover, &:focus
 			text-decoration: underline
+
+.scrollup
+	text-align: center
+	cursor: pointer
+	vertical-align: middle
+	width: 39px
+	height: 39px
+	border-radius: 5px
+	font-size: 20px
+	position: fixed
+	bottom: 30px
+	right: 20px
+	border: 1px solid #fff
+	display: none
+	background: #FECE1A
+	> a
+		position: relative
+		top: 7px
+		color: #fff
+
+/* 4 Responsible */
+
+@media (min-width: 1200px)
+	.thumbnail .more
+		margin-left: -41px
+		width: 80px
+		height: 80px
+		border-radius: 40px
+		line-height: 80px
+
+@media (max-width: 979px)
+	body
+		padding-left: 0
+		padding-right: 0
+	.navbar-fixed-top, .navbar-fixed-bottom
+		position: fixed
+	.navbar .nav > li > a
+		line-height: 20px
+		vertical-align: middle
+	.section
+		padding-left: 20px
+		padding-right: 20px
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top
+		margin-left: 0px
+		margin-right: 0px
+	.nav-collapse
+		clear: both
+		.nav
+			float: none
+			margin: 0 0 10px
+			> li
+				float: none
+		width: 100%
+		display: inherit
+		&.collapse
+			width: 100%
+			display: inherit
+	.thumbnail
+		.more
+			margin-left: -21px
+			width: 40px
+			height: 40px
+			border-radius: 30px
+			line-height: 40px
+		&:hover .more
+			margin-top: -20px
+	.newsletter form
+		text-align: center
+
+@media (max-width: 767px)
+	.info-mail
+		width: 90%
+		padding: 15px 0px
+	.project-description
+		padding-left: 20px
+	.price-column, .testimonial
+		margin-top: 30px
