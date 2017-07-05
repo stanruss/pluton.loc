@@ -11,12 +11,13 @@ body
 	line-height: 20px
 
 a
-	color: $grey
+	color: $main-color
 	text-decoration: none
 	&:hover
 		color: $accent
 		text-decoration: none
-
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover
+	color: $white
 h1, h2, h3, h4, h5, h6
 	font-weight: normal
 
@@ -29,7 +30,7 @@ p
 	color: $white
 
 .navbar
-	background: $grey
+	background: $main-color
 	margin-bottom: 0
 	min-height: 70px
 
@@ -39,12 +40,13 @@ p
 	padding-top: 0
 
 .navbar-inner
-	background: $grey
+	background: $main-color
 	@include border-radius(0, all)
 	filter: none
 	border: none
 	box-shadow: none
-
+.navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled]
+	background-color: $accent
 .navbar
 	.brand img
 		width: 120px
@@ -58,7 +60,7 @@ p
 				margin: 10px 3px
 				-webkit-box-shadow: none
 				-moz-box-shadow: none
-				@include border(1px, $grey, all)
+				@include border(1px, $main-color, all)
 				box-shadow: none
 				font-size: 15px
 				text-shadow: none
@@ -67,17 +69,17 @@ p
 			&:hover > a
 				@include border(1px, $accent, all)
 				color: $white
-				background-color: $grey
+				background-color: $main-color
 				@include transition(border-color, 1s, ease)
 		.active > a
 			@include border(1px, $accent, all)
 			color: $white
-			background-color: $grey
+			background-color: $main-color
 			@include transition(border-color, 1s, ease)
 			&:hover, &:focus
 				@include border(1px, $accent, all)
 				color: $white
-				background-color: $grey
+				background-color: $main-color
 				@include transition(border-color, 1s, ease)
 
 .nav-pills
@@ -89,15 +91,15 @@ p
 			margin-right: 5px
 			padding-left: 25px
 			padding-right: 25px
-			@include border(1px, $grey, all)
+			@include border(1px, $main-color, all)
 			&:hover
-				background: $grey
+				background: $main-color
 				color: $white
 		.active > a
-			background: $grey
+			background: $main-color
 			color: $white
 			&:hover, &:focus
-				background: $grey
+				background: $main-color
 				color: $white
 
 .navbar .btn-navbar
@@ -133,13 +135,13 @@ p
 .large-text
 	line-height: 1.2em
 	font-size: 30px
-	color: $grey
+	color: $main-color
 	padding: 20px
 	margin-bottom: 20px
 
 .highlighted-box
 	h1, p
-		color: $grey !important
+		color: $main-color !important
 
 .circle-border
 	display: inline-block
@@ -162,7 +164,7 @@ p
 	text-align: center
 	width: 0
 	height: 0
-	@include border(30px, $grey, top)
+	@include border(30px, $main-color, top)
 	@include border(585px, outset transparent, left)
 	@include border(585px, outset transparent, right)
 	position: relative
@@ -179,47 +181,47 @@ p
 
 .button
 	display: inline-block
-	@include border(1px, $grey, all)
-	color: $grey
+	@include border(1px, $main-color, all)
+	color: $main-color
 	background-color: transparent
 	padding: 15px 30px
 	font-size: 17px
 	line-height: auto
 	&:visited, &:focus
 		display: inline-block
-		@include border(1px, $grey, all)
-		color: $grey
+		@include border(1px, $main-color, all)
+		color: $main-color
 		background-color: transparent
 		padding: 15px 30px
 		font-size: 17px
 		line-height: auto
 	&:hover, &:active
-		background-color: $grey
+		background-color: $main-color
 		color: $white
 
 .button-sp
 	border: none
 	background-color: $accent
-	color: $grey
+	color: $main-color
 	&:visited, &:focus
 		border: none
 		background-color: $accent
-		color: $grey
+		color: $main-color
 	&:hover, &:active
-		background-color: $grey
+		background-color: $main-color
 		color: $accent
 
 .button-ps
 	border: none
-	background-color: $grey
+	background-color: $main-color
 	color: $accent
 	&:visited, &:focus
 		border: none
-		background-color: $grey
+		background-color: $main-color
 		color: $accent
 	&:hover, &:active
 		background-color: $accent
-		color: $grey
+		color: $main-color
 
 /* 2.3 Thumbnails - Predefined bootstrap's thumbnail class. */
 
@@ -271,7 +273,7 @@ p
 		left: 0
 		width: 100%
 		height: 100%
-		background: $grey
+		background: $main-color
 		position: absolute
 		@include transition(all, .2s, ease-out)
 	&:hover .mask
@@ -297,7 +299,7 @@ p
 			height: 32px
 			color: $accent
 			&:hover
-				color: $grey
+				color: $main-color
 
 /* 3. Sections */
 
@@ -319,7 +321,7 @@ p
 			font-weight: lighter
 
 .primary-section
-	background: $grey
+	background: $main-color
 	.triangle
 		@include border(40px, $accent, top)
 	.title
@@ -335,15 +337,15 @@ p
 .secondary-section
 	background: $accent
 	.title
-		@include border(1px, $grey, bottom)
+		@include border(1px, $main-color, bottom)
 	h1, .title p
-		color: $grey
+		color: $main-color
 
 /* Third section use bacground image */
 
 .third-section
 	padding-bottom: 70px
-	background: $grey url(../pluton/images/brand-bg.png) no-repeat center
+	background: $main-color url(../pluton/images/brand-bg.png) no-repeat center
 	@include border(6px, $accent, top)
 	.container
 		padding-top: 20px
@@ -375,7 +377,7 @@ p
 
 .single-project
 	margin-bottom: 30px
-	background: $grey
+	background: $main-color
 	img
 		width: 100%
 
@@ -435,12 +437,12 @@ p
 		background: $accent
 		h2
 			margin-top: 20%
-		color: $grey
+		color: $main-color
 		h3, p
-			color: $grey
+			color: $main-color
 	&:hover
 		h3, .social a:hover
-			color: $grey
+			color: $main-color
 
 .about-text
 	margin-top: 30px
@@ -466,7 +468,7 @@ p
 			margin: 0
 			left: 10px
 			z-index: 1
-			color: $grey
+			color: $main-color
 		.bar
 			height: 40px
 			position: absolute
@@ -494,11 +496,11 @@ p
 			width: 20px
 			height: 20px
 			&:hover
-				background: $grey
+				background: $main-color
 
 .testimonial
 	p
-		color: $grey
+		color: $main-color
 		background: $accent
 		padding: 15px
 		margin: 0
@@ -545,7 +547,7 @@ p
 	margin: 0 auto
 	text-align: center
 	h3
-		background-color: $grey
+		background-color: $main-color
 		text-transform: uppercase
 		text-align: center
 		color: $accent
@@ -573,7 +575,7 @@ p
 .price-text
 	margin: 30px 0 20px
 	font-size: 20px
-	color: $grey
+	color: $main-color
 	font-weight: normal
 
 /* 3.6 Newsletter */
@@ -597,14 +599,14 @@ p
 	.button-sp
 		&:hover, &:active
 			background-color: $white
-			color: $grey
+			color: $main-color
 
 /* 3.7 Contact */
 
 .contact
 	background: $accent
 	h1, h2, h3, h4, h5, h6, .section .title > p, .social > li > a
-		color: $grey
+		color: $main-color
 	textarea
 		padding: 10px
 		line-height: 20px
@@ -663,7 +665,7 @@ p
 		a
 			color: $white
 			&:hover
-				color: $grey
+				color: $main-color
 
 .contact-form
 	background: $white
@@ -694,15 +696,15 @@ p
 	width: 60%
 	margin: 0 auto
 	padding: 15px
-	color: $grey
+	color: $main-color
 
 .black
-	color: $grey
+	color: $main-color
 
 /* 3.8 Footer */
 
 .footer
-	background: $grey
+	background: $main-color
 	text-align: center
 	> p
 		color: $white
